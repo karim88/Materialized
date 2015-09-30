@@ -1,0 +1,91 @@
+.nav-posts {
+  margin: 28px;
+  height: 60px;
+}
+.nav-posts p {
+  padding: 10px;
+  background-color: #2196f3;
+  border-radius: 3px;
+  box-shadow: 0 0 2 #2196f3;
+}
+.nav-posts p a {
+  color: #ffffff;
+}
+.nav-posts p:hover {
+  box-shadow: 0 0 10px #2196f3;
+}
+.menu-pages-container ul li a {
+  color: #ffffff;
+}
+.dropdown-content li a {
+  color: #2196f3;
+}
+footer a {
+  color: #ffffff;
+}
+.row {
+  padding: 5%;
+}
+.row .col .gallery img {
+  width: 150px;
+  height: 150px;
+  border-radius: 2px;
+}
+.row .col .image-post img {
+  width: 450px;
+  height: 450px;
+  border-radius: 2px;
+  border: 2px solid #ffffff;
+}
+.slug {
+  padding: 5px;
+}
+.info {
+  font-size: 10px;
+  color: #777777;
+}
+/* Psts Card */
+.card {
+  max-height: 450px;
+  min-height: 450px;
+}
+.card .card-image {
+  max-height: 233px;
+  min-height: 233px;
+}
+.card .card-content {
+  padding: 13px;
+  max-height: 153px;
+  min-height: 153px;
+}
+.card .card-content h4 a {
+  color: #ffffff;
+}
+.card-panel .card-content {
+  padding: 13px;
+}
+.card-panel .card-content .info {
+  color: #ffffff;
+}
+.card-panel .card-content .info a {
+  color: #ffa;
+}
+.card-panel .card-content h4 a {
+  color: #ffffff;
+}
+.avatar {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+input[type='submit'] {
+  background-color: rgba(0, 0, 0, 0);
+  border: 0 solid;
+}
+.input-field input[type=text]:focus + label {
+  color: #2196f3;
+}
+/* label underline focus color */
+.input-field input[type=text]:focus {
+  border-bottom: 1px solid #2196f3;
+  box-shadow: 0 1px 0 0 #2196f3;
+}
