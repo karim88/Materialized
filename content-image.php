@@ -2,8 +2,14 @@
   <div class="card">
     <div class="card-image waves-effect waves-block">
     <a href="<?php the_permalink(); ?>">
-      <?php the_post_thumbnail('small-thimbnails') ?>
-      <span class="card-title blue"> <?php the_title(); ?></span>
+      <?php
+      if(has_post_thumbnail()){
+        the_post_thumbnail('small-thumbnails');
+      }
+      else{ ?>
+        <img src="<?php bloginfo('template_directory'); ?>/img/default-image.png" alt="<?php the_title(); ?>" width="100%" height="100%"/>
+      <?php } ?>
+      <span class="card-title blue darken-3"> <?php the_title(); ?></span>
     </a>
     </div>
     <div class="card-content">
@@ -26,8 +32,8 @@
         <?php the_excerpt(); ?>
       </p>
     </div>
-    <div class="card-action blue">
-       <a class="white-text read-more waves-effect blue btn-flat" href="<?php the_permalink(); ?>"><?php _e( 'Read More', 'materialized' ); ?></a>
+    <div class="card-action blue darken-3">
+       <a class="white-text read-more waves-effect blue darken-3 btn-flat" href="<?php the_permalink(); ?>"><?php _e( 'Read More', 'materialized' ); ?></a>
     </div>
   </div>
 </div>

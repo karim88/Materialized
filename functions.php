@@ -48,7 +48,7 @@ function Materialized_setup()
   ));
   //Featured Images support
   add_theme_support( 'post-thumbnails' );
-  add_image_size( 'small-thimbnails', 200, 400, false );
+  add_image_size( 'small-thumbnails', 200, 400, false );
   add_image_size( 'banner-thumbnails', 1000, 400, false );
 
   //Post format support

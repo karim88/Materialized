@@ -7,9 +7,10 @@
     $('.menu-item-has-children:eq('+i+')').attr('data-activates', 'dropdown'+i);
     $('.menu-item-has-children:eq('+i+')').attr('data-beloworigin', 'true');
   }
-
+/*
   $('img').addClass('materialboxed');
   $('img.avatar').removeClass('materialboxed');
+*/
   //initializing Mobile Nav
   $(".button-collapse").sideNav();
 

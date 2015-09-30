@@ -11,8 +11,10 @@
         <h1><a href="<?php the_permalink(); ?>"> <?php the_title(); ?></a></h1>
 
           <div class="chip">
-            <img class="avatar" src="images/yuna.jpg" alt="avatar">
-            <?php echo get_the_author( ); ?>
+            <?php
+              echo get_avatar(get_the_author_meta( 'ID' ), 24, $default, get_the_author . ' avatar', ['class' => 'avatar']);
+              echo get_the_author( );
+            ?>
           </div>
 
         <p>

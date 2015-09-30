@@ -22,7 +22,6 @@
     <?php wp_head(); ?>
   </head>
   <body <?php body_class(); ?>>
-
     <header class="site-header">
       <nav>
         <div class="blue navbar-fixed nav-wrapper">

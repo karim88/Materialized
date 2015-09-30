@@ -61,17 +61,21 @@ footer a {
 .card .card-content h4 a {
   color: #ffffff;
 }
-.card-panel .card-content {
+.card-panel {
   padding: 13px;
 }
-.card-panel .card-content .info {
+.card-panel .info {
   color: #ffffff;
 }
-.card-panel .card-content .info a {
+.card-panel .info a {
   color: #ffa;
 }
-.card-panel .card-content h4 a {
+.card-panel h4 a {
   color: #ffffff;
+}
+.site-logo {
+  border-radius: 23px;
+  background-color: #ffffff;
 }
 .avatar {
   margin-left: 5px;

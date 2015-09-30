@@ -2,7 +2,14 @@
   <div class="card">
     <div class="card-image waves-effect waves-block">
     <a href="<?php the_permalink(); ?>">
-      <?php the_post_thumbnail('small-thimbnails') ?>
+      <?php
+      if(has_post_thumbnail()){
+        the_post_thumbnail('small-thumbnails');
+      }
+      else{ ?>
+        <img src="<?php bloginfo('template_directory'); ?>/img/default-image.png" alt="<?php the_title(); ?>" width="100%" height="400px"/>
+      <?php } ?>
+
       <span class="card-title blue"> <?php the_title(); ?></span>
     </a>
     </div>
