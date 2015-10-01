@@ -1,4 +1,4 @@
-<div class="col m5 s12 grid-item">
+<div class="col m6 s12 grid-item">
   <div class="card">
     <div class="card-image waves-effect waves-block">
     <a href="<?php the_permalink(); ?>">

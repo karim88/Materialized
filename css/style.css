@@ -24,7 +24,7 @@ footer a {
   color: #ffffff;
 }
 .row {
-  padding: 5%;
+  padding: 2%;
 }
 .row .col .gallery img {
   width: 150px;
@@ -36,6 +36,11 @@ footer a {
   height: 450px;
   border-radius: 2px;
   border: 2px solid #ffffff;
+}
+.grid,
+.grid-item {
+  padding: 0;
+  margin: 0;
 }
 .slug {
   padding: 5px;
@@ -62,7 +67,8 @@ footer a {
   color: #ffffff;
 }
 .card-panel {
-  padding: 13px;
+  padding-right: 13px;
+  padding-left: 13px;
 }
 .card-panel .info {
   color: #ffffff;
@@ -73,13 +79,35 @@ footer a {
 .card-panel h4 a {
   color: #ffffff;
 }
+.widgets {
+  background-color: #2196f3;
+  box-shadow: 0 0 3px #2196f3;
+  color: #ffffff;
+  border-radius: 2px;
+  text-shadow: 0 0 1px #777777;
+  margin: 7px 0 0 0;
+  padding: 2px;
+}
+.widgets a {
+  color: #ffffff;
+}
 .site-logo {
   border-radius: 23px;
   background-color: #ffffff;
 }
+.status {
+  font-size: 20px;
+}
+.status .status-img {
+  margin-top: 25%;
+  border-radius: 70px;
+}
 .avatar {
   margin-left: 5px;
   margin-right: 5px;
+}
+blockquote {
+  border-color: #ffffff;
 }
 input[type='submit'] {
   background-color: rgba(0, 0, 0, 0);

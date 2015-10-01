@@ -56,5 +56,5 @@
           <?php get_search_form(  ); ?>
         </div>
       </div>
-
     </header>
+    <div class="row">

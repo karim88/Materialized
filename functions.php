@@ -52,7 +52,7 @@ function Materialized_setup()
   add_image_size( 'banner-thumbnails', 1000, 400, false );
 
   //Post format support
-  add_theme_support('post-formats', ['aside', 'gallery', 'link', 'image', 'quote', 'video', 'status', 'audio', 'chat']);
+  add_theme_support('post-formats', ['aside', 'gallery', 'link', 'image', 'quote', 'video', 'status', 'audio']);
 }
 
 /**
@@ -85,6 +85,30 @@ function wpb_imagelink_setup() {
     update_option('image_default_link_type', 'none');
 }
 
+function materialized_widgets_init()
+{
+  //Sidebar 1
+  register_sidebar(array(
+    'name' => __('Sidebar', 'materialized'),
+    'id' => 'sidebar-1',
+    'description' => '',
+    'before_widget' => '<div id="%1$s" class="widget %2$s">',
+    'after_widget' => "</div>",
+    'before_title' => '<h4 class="widgettitle">',
+    'after_title' => "</h4>"
+  ));
+  register_sidebar(array(
+    'name' => __('Footer sidebar', 'materialized'),
+    'id' => 'sidebar-2',
+    'description' => '',
+    'before_widget' => '<div id="%1$s" class="collection-item widget %2$s">',
+    'after_widget' => "</div>",
+    'before_title' => '<h4 class="widgettitle">',
+    'after_title' => "</h4>"
+  ));
+
+}
+
 //Filters
 add_filter( 'embed_defaults', 'modify_embed_defaults' );
 add_filter( 'excerpt_more', 'new_excerpt_more' );
@@ -93,6 +117,7 @@ add_filter( 'excerpt_length', 'new_excerpt_length' );
 add_action( 'after_setup_theme','Materialized_setup');
 add_action('wp_enqueue_scripts', 'wp_resources');
 add_action('admin_init', 'wpb_imagelink_setup', 10);
+add_action('widgets_init', 'materialized_widgets_init');
 
 class My_Walker_Nav_Menu extends Walker_Nav_Menu {
   function start_lvl(&$output, $depth) {
