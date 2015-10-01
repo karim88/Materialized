@@ -18,6 +18,7 @@
     ?>
   </div>
   <div class="col m2 s12 widgets">
+    <?php if(is_rtl()){echo 'rtl';}else{echo 'no';} ?>
     <?php dynamic_sidebar('sidebar-1'); ?>
   </div>
 

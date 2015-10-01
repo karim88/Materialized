@@ -3,8 +3,10 @@
   if(have_posts()){
     while (have_posts()) : the_post();?>
     <div class="center nav-posts">
-        <?php previous_post_link('<p class="waves-effect left">%link</p>', __( 'Previous: ', 'materialized' ) . '%title', TRUE); ?>
-        <?php next_post_link( '<p class="waves-effect right">%link</p>', __( 'Next: ', 'materialized' ) . '%title', TRUE ); ?>
+        <?php $dir = (is_rtl())? 'right' : 'left'; ?>
+        <?php $dir1 = (!is_rtl())? 'right' : 'left'; ?>
+        <?php previous_post_link('<p class="waves-effect '.$dir.'">%link</p>', __( 'Previous: ', 'materialized' ) . '%title', TRUE); ?>
+        <?php next_post_link( '<p class="waves-effect '.$dir1.'">%link</p>', __( 'Next: ', 'materialized' ) . '%title', TRUE ); ?>
     </div>
       <div class="article">
         <p class="center"><?php the_post_thumbnail('banner-thumbnails') ?></p>
@@ -24,8 +26,8 @@
         </p>
       </div>
       <div class="center nav-posts">
-          <?php previous_post_link('<p class="waves-effect left">%link</p>', __( 'Previous: ', 'materialized' ) . '%title', TRUE); ?>
-          <?php next_post_link( '<p class="waves-effect right">%link</p>', __( 'Next: ', 'materialized' ) . '%title', TRUE ); ?>
+          <?php previous_post_link('<p class="waves-effect '.$dir.'">%link</p>', __( 'Previous: ', 'materialized' ) . '%title', TRUE); ?>
+          <?php next_post_link( '<p class="waves-effect '.$dir1.'">%link</p>', __( 'Next: ', 'materialized' ) . '%title', TRUE ); ?>
       </div>
 
       <?php endwhile;
