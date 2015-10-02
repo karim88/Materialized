@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-  <div class="col m10 s12">
+  <div class="col m9 s12">
     <?php
       if(have_posts()){
     ?>
@@ -17,8 +17,8 @@
     }
     ?>
   </div>
-  <div class="col m2 s12 widgets">
-    <?php if(is_rtl()){echo 'rtl';}else{echo 'no';} ?>
+  <div class="col m3 s12 widgets">
+
     <?php dynamic_sidebar('sidebar-1'); ?>
   </div>
 

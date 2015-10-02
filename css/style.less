@@ -11,6 +11,22 @@
   min-height: @min;
 }
 
+.zoom-animation(@prop, @delay, @speed, @dem){
+  -webkit-transition: @prop @delay @speed; /* Safari and Chrome */
+  -moz-transition: @prop @delay @speed; /* Firefox */
+  -ms-transition: @prop @delay @speed; /* IE 9 */
+  -o-transition: @prop @delay @speed; /* Opera */
+  transition: @prop @delay @speed;
+  &:hover{
+    -webkit-transform: scale(@dem); /* Safari and Chrome */
+    -moz-transform: scale(@dem); /* Firefox */
+    -ms-transform: scale(@dem); /* IE 9 */
+    -o-transform: scale(@dem); /* Opera */
+    transform: scale(@dem);
+  }
+}
+
+
 body{
 }
 
@@ -43,14 +59,16 @@ footer a{
   color: @white;
 }
 
+
 .row{
   padding: 2%;
   .col{
     .gallery{
       img{
-        width: 150px;
-        height: 150px;
+        width: 130px;
+        height: 130px;
         border-radius: 2px;
+        .zoom-animation(all, 1s, ease, 1.25);
       }
     }
     .image-post{
@@ -135,7 +153,27 @@ footer a{
     margin-top: 25%;
     border-radius: 70px;
   }
+}
+
+.search-wrapper{
+  position: relative;
+  color: @blue;
+  input#s {
+    display: block;
+    font-size: 16px;
+    font-weight: 300;
+    border-radius: 2px;
+    width: 80%;
+    height: 45px;
+    padding: 0px 45px 0px 15px;
   }
+  i.material-icons {
+    position: absolute;
+    top: 10px;
+    right: 5%;
+    cursor: pointer;
+  }
+}
 
 .avatar{
   margin-left: 5px;
@@ -146,14 +184,24 @@ blockquote{
   border-color: @white;
 }
 
+/* to fix submit apparence */
 input[type='submit']{
   background-color: rgba(0, 0, 0, 0);;
   border: 0 solid;
 }
 
+input{
+  border-color: @blue !important;
+  &:focus, &:active{
+    border-color: @blue !important;
+    box-shadow: @blue !important;
+  }
+}
+
 .input-field input[type=text]:focus + label {
   color: @blue;
 }
+
 /* label underline focus color */
 .input-field input[type=text]:focus {
   border-bottom: 1px solid @blue;

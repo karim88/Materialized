@@ -61,7 +61,7 @@ function Materialized_setup()
 */
 function modify_embed_defaults() {
     return array(
-        'width'  => 450,
+        'width'  => 400,
         'height' => 375
     );
 }

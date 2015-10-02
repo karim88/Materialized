@@ -47,12 +47,12 @@
         </div>
       </nav>
       <div class="row">
-        <div class="col m8 s12">
+        <div class="col m9 s12">
           <a href="<?php echo home_url(); ?>">
           <img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="Logo" />
           </a>
         </div>
-        <div class="col m4 s12">
+        <div class="col m3 s12">
           <?php get_search_form(  ); ?>
         </div>
       </div>
