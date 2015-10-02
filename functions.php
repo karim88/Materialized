@@ -93,16 +93,16 @@ function materialized_widgets_init()
     'id' => 'sidebar-1',
     'description' => '',
     'before_widget' => '<div id="%1$s" class="widget %2$s">',
-    'after_widget' => "</div>",
+    'after_widget' => "</div><hr class='white'>",
     'before_title' => '<h4 class="widgettitle">',
     'after_title' => "</h4>"
   ));
   register_sidebar(array(
     'name' => __('Footer sidebar', 'materialized'),
     'id' => 'sidebar-2',
-    'description' => '',
-    'before_widget' => '<div id="%1$s" class="collection-item widget %2$s">',
-    'after_widget' => "</div>",
+    'description' => __('This sidebar are displayed in the footer, and hided in small devices', 'materialized'),
+    'before_widget' => '<div id="%1$s" class="widget %2$s">',
+    'after_widget' => '</div><hr class="white">',
     'before_title' => '<h4 class="widgettitle">',
     'after_title' => "</h4>"
   ));

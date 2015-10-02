@@ -1,5 +1,6 @@
-<?php get_header();
-
+<?php get_header(); ?>
+  <div class="col m9 s12">
+  <?php
   if(have_posts()){
     while (have_posts()) : the_post();?>
     <div class="center nav-posts">
@@ -34,7 +35,10 @@
   }
   else{
     echo __("Post not found!", "materialized");
-  }
+  }?>
+  </div>
+  <div class="col m3 s12 widgets">
 
-
-get_footer(); ?>
+    <?php dynamic_sidebar('sidebar-1'); ?>
+  </div>
+<?php get_footer(); ?>

@@ -1,5 +1,5 @@
 </div> <!-- end of main row -->
-  <footer class="page-footer blue">
+  <footer class=".hide-on-small-only page-footer blue">
     <div class="container">
       <div class="row">
         <div class="col l6 s12 widgets">

@@ -16,13 +16,13 @@
       rewind_posts();
     }
     elseif (is_day()) {
-      printf(__('Daily Archives: ', 'materialized'), get_the_date());
+      printf(__('Daily Archives: %s', 'materialized'), get_the_date());
     }
     elseif (is_month()) {
-      printf(__('Monthly Archives: ', 'materialized'), get_the_date('F Y'));
+      printf(__('Monthly Archives: %s', 'materialized'), get_the_date('F Y'));
     }
     elseif (is_year()) {
-      printf(__('Yearly Archives: ', 'materialized'), get_the_date('Y'));
+      printf(__('Yearly Archives: %s', 'materialized'), get_the_date('Y'));
     }
     else {
       # code...

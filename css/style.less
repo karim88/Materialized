@@ -49,7 +49,7 @@ body{
   }
 }
 
-.menu-pages-container ul li a{
+footer a, hr, .menu-pages-container ul li a{
   color: @white;
 }
 
@@ -57,10 +57,17 @@ body{
    color: @blue;
  }
 
-footer a{
-  color: @white;
+hr{
+  margin: 4px 10px 4px 0 !important;
+  background-color: @white;
+  border-width: 0px;
+  height: 2px;
+  box-shadow: 0 0 2px @white;
+  border-radius: 1px;
+  &:last-of-type{
+    height: 0px;
+  }
 }
-
 
 .row{
   padding: 2%;
@@ -139,6 +146,9 @@ footer a{
   text-shadow: 0 0 1px @gray;
   margin: 7px 0 0 0;
   padding: 2px;
+  .widget{
+    margin: 7px 0 7px 0;
+  }
   a{
     color: @white;
   }
@@ -185,6 +195,12 @@ footer a{
 blockquote{
   border-color: @white;
 }
+
+img{
+  max-width: 700px;
+  max-height: 700px;
+}
+
 
 #wp-calendar{
   td{

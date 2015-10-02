@@ -14,14 +14,24 @@
 .nav-posts p:hover {
   box-shadow: 0 0 10px #2196f3;
 }
+footer a,
+hr,
 .menu-pages-container ul li a {
   color: #ffffff;
 }
 .dropdown-content li a {
   color: #2196f3;
 }
-footer a {
-  color: #ffffff;
+hr {
+  margin: 4px 10px 4px 0 !important;
+  background-color: #ffffff;
+  border-width: 0px;
+  height: 2px;
+  box-shadow: 0 0 2px #ffffff;
+  border-radius: 1px;
+}
+hr:last-of-type {
+  height: 0px;
 }
 .row {
   padding: 2%;
@@ -108,6 +118,9 @@ footer a {
   margin: 7px 0 0 0;
   padding: 2px;
 }
+.widgets .widget {
+  margin: 7px 0 7px 0;
+}
 .widgets a {
   color: #ffffff;
 }
@@ -147,6 +160,10 @@ footer a {
 }
 blockquote {
   border-color: #ffffff;
+}
+img {
+  max-width: 700px;
+  max-height: 700px;
 }
 #wp-calendar td a {
   padding: 4px;
