@@ -1,6 +1,6 @@
-<?php get_header();
-
-  if(have_posts()){
+<?php get_header(); ?>
+  <div class="col m9 s12">
+  <?php if(have_posts()){
     ?>
 
     <h3><span class="white-text blue slug"><?php
@@ -40,6 +40,15 @@
   }
   else{
        _e("Content not found!", 'matarialized');
-  }
+  } ?>
+  </div>
+  <div class="col m3 s12 widgets">
 
-get_footer(); ?>
+    <?php dynamic_sidebar('sidebar-1'); ?>
+  </div>
+  <div class="col m12 s12">
+    <?php the_posts_pagination([
+      'screen_reader_text' => ' ',
+      ]); ?>
+  </div>
+<?php get_footer(); ?>

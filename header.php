@@ -23,29 +23,31 @@
   </head>
   <body <?php body_class(); ?>>
     <header class="site-header">
-      <nav>
-        <div class="blue navbar-fixed nav-wrapper">
-          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-          <ul class="hide-on-med-and-down">
-            <?php wp_nav_menu(array(
-              'theme_location' => 'primary',
-              'walker'         => new My_Walker_Nav_Menu(),
-              'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-            ));
-            ?>
-          </ul>
-          <ul class="side-nav" id="mobile-demo">
-            <?php wp_nav_menu(array(
-              'theme_location' => 'primary',
-              'walker'         => new My_Walker_Nav_Menu(),
-              'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul><li><a href="<?php echo home_url(); ?>">
-              <img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="Logo" width="32" />
-              </a></li>',
-            ));
-            ?>
-          </ul>
-        </div>
-      </nav>
+      <div class="navbar-fixed">
+        <nav>
+          <div class="blue nav-wrapper">
+            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+            <ul class="hide-on-med-and-down">
+              <?php wp_nav_menu(array(
+                'theme_location' => 'primary',
+                'walker'         => new My_Walker_Nav_Menu(),
+                'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+              ));
+              ?>
+            </ul>
+            <ul class="side-nav" id="mobile-demo">
+              <?php wp_nav_menu(array(
+                'theme_location' => 'primary',
+                'walker'         => new My_Walker_Nav_Menu(),
+                'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul><li><a href="<?php echo home_url(); ?>">
+                <img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="Logo" width="32" />
+                </a></li>',
+              ));
+              ?>
+            </ul>
+          </div>
+        </nav>
+      </div>
       <div class="row">
         <div class="col m9 s12">
           <a href="<?php echo home_url(); ?>">

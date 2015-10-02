@@ -148,6 +148,38 @@ footer a {
 blockquote {
   border-color: #ffffff;
 }
+#wp-calendar td a {
+  padding: 4px;
+  border-radius: 12px;
+  color: #2196f3;
+  background-color: #ffffff;
+}
+nav.pagination {
+  font-size: 20px;
+  text-align: center;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  background-color: rgba(0, 0, 0, 0);
+  color: #2196f3;
+}
+nav.pagination .page-numbers {
+  border-radius: 2px;
+  padding: 0 15px 0 15px;
+  margin: 0 10px 0 10px;
+  color: #2196f3;
+  background-color: #ffffff;
+}
+nav.pagination .page-numbers.current {
+  color: #ffffff;
+  background-color: #2196f3;
+}
+nav.pagination .page-numbers.current:hover {
+  background-color: #2196f3;
+  box-shadow: 0 0 2px #2196f3;
+}
+nav.pagination .page-numbers:hover {
+  background-color: #eeeeee;
+  box-shadow: 0 0 2px #777777;
+}
 /* to fix submit apparence */
 input[type='submit'] {
   background-color: rgba(0, 0, 0, 0);

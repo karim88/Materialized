@@ -21,5 +21,10 @@
 
     <?php dynamic_sidebar('sidebar-1'); ?>
   </div>
+  <div class="col m12 s12">
+    <?php the_posts_pagination([
+      'screen_reader_text' => ' ',
+      ]); ?>
+  </div>
 
 <?php get_footer(); ?>

@@ -4,7 +4,9 @@
 
 @blue: #2196F3;
 @white: #fff;
+@light-gray: #eee;
 @gray: #777;
+@transtapent: rgba(0, 0, 0, 0);
 
 .inter-height(@max, @min){
   max-height: @max;
@@ -184,9 +186,47 @@ blockquote{
   border-color: @white;
 }
 
+#wp-calendar{
+  td{
+    a{
+      padding: 4px;
+      border-radius: 12px;
+      color: @blue;
+      background-color: @white;
+    }
+  }
+}
+
+nav.pagination{
+  font-size: 20px;
+  text-align: center;
+  box-shadow: 0 0 0 @transtapent;
+  background-color: @transtapent;
+  color: @blue;
+  .page-numbers{
+    border-radius: 2px;
+    padding: 0 15px 0 15px;
+    margin: 0 10px 0 10px;
+    color: @blue;
+    background-color: @white;
+    &.current{
+      color: @white;
+      background-color: @blue;
+      &:hover{
+              background-color: @blue;
+        box-shadow: 0 0 2px @blue;
+      }
+    }
+    &:hover{
+      background-color: @light-gray;
+      box-shadow: 0 0 2px @gray;
+    }
+  }
+}
+
 /* to fix submit apparence */
 input[type='submit']{
-  background-color: rgba(0, 0, 0, 0);;
+  background-color: @transtapent;
   border: 0 solid;
 }
 
