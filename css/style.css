@@ -29,6 +29,13 @@
   padding: 0;
   margin: 0;
 }
+.not-found {
+  color: #2196f3;
+  background-color: #b1eaf1;
+  padding: 20px;
+  border-radius: 2px;
+  box-shadow: 0 0 5px #b1eaf1;
+}
 .comments1 {
   margin: 30px 10px 0 0;
   background-color: #eeeeee;

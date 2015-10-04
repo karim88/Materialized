@@ -10,11 +10,22 @@
           <?php the_content(); ?>
         </p>
       </div>
+      <div class="comments1">
+        <?php
+        if ( comments_open() || get_comments_number() ) :
+          comments_template();
+        endif;
+        ?>
+      </div>
+
     <?php endwhile;
   }
   else{
-    echo __("Page not found!", "materialized");
-  }
+    ?>
+    <div class="card-panel not-found">
+      <?php echo __("OOPS Page not found!", "materialized"); ?>
+    </div>
+  <?php }
 
 
 get_footer(); ?>
