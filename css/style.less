@@ -32,6 +32,80 @@
 body{
 }
 
+.article{
+  margin: 30px 10px 0 0;
+  background-color: @light-gray;
+  border-radius: 3px;
+  .post-content{
+      padding: 0;
+      margin: 0;
+      .the_content{
+        padding: 20px;
+        margin: 20px;
+      }
+  }
+  h3{
+    margin: 0;
+    padding: 10px;
+    background-color: @blue;
+    color: @white;
+
+  }
+  .chip{
+    margin: 20px;
+    background-color: @white;
+  }
+  .attachment-banner-thumbnails{
+    width: 100%;
+    max-width: none;
+    height: 400px;
+    max-height: none;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+.comments1{
+  margin: 30px 10px 0 0;
+  background-color: @light-gray;
+  border-radius: 3px;
+  #commentform{
+    p{
+      color: @gray;
+      a{
+        color: @blue;
+      }
+    }
+  }
+  h3{
+    color: @white;
+    background-color: @blue;
+    padding: 20px 10px 5px 10px;
+  }
+  .comment-body{
+    .comment-reply-link{
+      color: @white;
+      background-color: @blue;
+      border-radius: 3px;
+      padding: 3px;
+    }
+  }
+  ol{
+    li{
+      list-style: none;
+    }
+  }
+  #comment::-moz-placeholder{
+    color: @gray;
+  }
+  .comment{
+    background-color: @white;
+    margin: 20px;
+    padding: 10px;
+    border-radius: 2px;
+  }
+}
+
 .nav-posts{
   margin: 28px;
   height: 60px;
@@ -190,6 +264,7 @@ hr{
 .avatar{
   margin-left: 5px;
   margin-right: 5px;
+  border-radius: 25px;
 }
 
 blockquote{
@@ -246,7 +321,7 @@ input[type='submit']{
   border: 0 solid;
 }
 
-input{
+input, textarea{
   border-color: @blue !important;
   &:focus, &:active{
     border-color: @blue !important;
@@ -259,7 +334,7 @@ input{
 }
 
 /* label underline focus color */
-.input-field input[type=text]:focus {
+.input-field input[type=text]:focus, textarea:focus {
   border-bottom: 1px solid @blue;
   box-shadow: 0 1px 0 0 @blue;
 }

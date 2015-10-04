@@ -11,7 +11,9 @@
     </span>
     </div>
     <div class="card-action">
-       <a class="white-text read-more waves-effect waves-light blue darken-4 btn-flat" href="<?php the_permalink(); ?>"><?php _e( 'Read More', 'materialized' ); ?></a>
+      <?php $dir = (!is_rtl())? 'right' : 'left'; ?>
+       <a class="white-text read-more waves-effect waves-light blue darken-4 btn-flat" href="<?php the_permalink(); ?>"><?php _e( 'Read More', 'materialized' ); ?></a><a class="white-text <?php echo $dir; ?>" href="<?php echo get_comment_link() ?>"><i class="material-icons">comment</i>
+         <?php echo get_comments_number();?></a>
     </div>
   </div>
 </div>

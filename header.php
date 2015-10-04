@@ -31,7 +31,7 @@
               <?php wp_nav_menu(array(
                 'theme_location' => 'primary',
                 'walker'         => new My_Walker_Nav_Menu(),
-                'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+                'items_wrap'     => '<ul id="%1$s" class="%2$s"><li><a href="'.home_url().'"><i class="material-icons">home</i></a></li>%3$s</ul>',
               ));
               ?>
             </ul>
@@ -39,9 +39,7 @@
               <?php wp_nav_menu(array(
                 'theme_location' => 'primary',
                 'walker'         => new My_Walker_Nav_Menu(),
-                'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul><li><a href="<?php echo home_url(); ?>">
-                <img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="Logo" width="32" />
-                </a></li>',
+                'items_wrap'     => '<ul id="%1$s" class="%2$s"><li><a href="'.home_url().'"><i class="material-icons">home</i></a></li>%3$s</ul>',
               ));
               ?>
             </ul>
