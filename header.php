@@ -56,6 +56,6 @@
           <?php get_search_form(  ); ?>
         </div>
       </div>
-      <?php dynamic_sidebar('slider-1'); ?>
+      <?php if(is_home()){ dynamic_sidebar('slider-1');} ?>
     </header>
     <div class="row">
