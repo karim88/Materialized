@@ -10,8 +10,8 @@ function wp_resources()
   wp_enqueue_style('materializecss', get_template_directory_uri() . '/css/materialize.min.css', array(), '20150903');
   wp_enqueue_style('materializeicons', 'https://fonts.googleapis.com/icon?family=Material+Icons', array(), '20150929');
   wp_enqueue_style('main', get_template_directory_uri() . '/css/style.css', array(), '20150903');
-
-  wp_enqueue_script('jquery1', get_template_directory_uri() . '/js/jquery-2.1.4.min.js', array(), '20150903', true);
+  wp_deregister_script('jquery');
+  wp_enqueue_script('jquery', get_template_directory_uri() . '/js/jquery-2.1.4.min.js', array(), '2.1.4', true);
   wp_enqueue_script('materializejs', get_template_directory_uri() . '/js/materialize.min.js', array(), '20150903', true);
   wp_enqueue_script('masonry', get_template_directory_uri() . '/js/masonry.js', array(), '20150928', true);
   wp_enqueue_script('app', get_template_directory_uri() . '/js/app.js', array(), '20150903', true);
@@ -105,6 +105,15 @@ function materialized_widgets_init()
     'after_widget' => '</div><hr class="white">',
     'before_title' => '<h4 class="widgettitle">',
     'after_title' => "</h4>"
+  ));
+  register_sidebar(array(
+    'name' => __('Slider', 'materialized'),
+    'id' => 'slider-1',
+    'description' => __('This is a simple sidebar for slider/carousel\'s widgets', 'materialized'),
+    'before_widget' => '<div id="%1$s" class="widget %2$s">',
+    'after_widget' => '</div>',
+    'before_title' => '',
+    'after_title' => '',
   ));
 
 }
