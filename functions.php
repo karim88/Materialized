@@ -1,5 +1,7 @@
 <?php
 
+require 'mpanel.php';
+
 /**
 * Function for loading stylesheet & scripts
 * @return null
@@ -76,14 +78,6 @@ function set_first_as_featured($attachment_ID){
 add_action('add_attachment', 'set_first_as_featured');
 add_action('edit_attachment', 'set_first_as_featured');
 
-/**
-* Function that remove links in images
-* @return null
-*/
-function wpb_imagelink_setup() {
-    $image_set = get_option( 'image_default_link_type' );
-    update_option('image_default_link_type', 'none');
-}
 
 function materialized_widgets_init()
 {
@@ -125,12 +119,11 @@ add_filter( 'excerpt_length', 'new_excerpt_length' );
 //Actions
 add_action( 'after_setup_theme','Materialized_setup');
 add_action('wp_enqueue_scripts', 'wp_resources');
-add_action('admin_init', 'wpb_imagelink_setup', 10);
 add_action('widgets_init', 'materialized_widgets_init');
 
 class My_Walker_Nav_Menu extends Walker_Nav_Menu {
   function start_lvl(&$output, $depth) {
     $indent = str_repeat("\t", $depth);
-    $output .= "\n$indent<ul class=\"dropdown-content\" id=\"\">\n";
+    $output .= "\n$indent<ul class=\"dropdown-content\" id=\"\">\n<li>aaa</li>";
   }
 }

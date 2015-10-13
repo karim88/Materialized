@@ -40,6 +40,19 @@
                 <?php
                     the_content();
                 ?>
+                <hr>
+                <p>
+                  <a target="_blank" href="https://plus.google.com/share?url=<?php the_permalink(); ?>" onclick="javascript:window.open(this.href,
+    '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+                    <img class="social-icon" src="<?php bloginfo('template_directory'); ?>/img/social/google-plus.png" alt="Tweet this!" width="32" height="32" />
+                  </a>
+                  <a target="_blank" href="http://www.facebook.com/sharer.php?u=<?php the_permalink();?>&amp;t=<?php the_title(); ?>" title="Share on Facebook.">
+                    <img class="social-icon" src="<?php bloginfo('template_directory'); ?>/img/social/facebook.png" alt="Tweet this!" width="32" height="32" />
+                  </a>
+                  <a target="_blank" href="http://twitter.com/home/?status=<?php the_title(); ?> - <?php the_permalink(); ?>" title="Tweet this!">
+                    <img class="social-icon" src="<?php bloginfo('template_directory'); ?>/img/social/twitter.png" alt="Tweet this!" width="32" height="32" />
+                  </a>
+                </p>
               </p>
             </div>
           </div>
