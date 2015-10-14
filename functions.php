@@ -124,6 +124,6 @@ add_action('widgets_init', 'materialized_widgets_init');
 class My_Walker_Nav_Menu extends Walker_Nav_Menu {
   function start_lvl(&$output, $depth) {
     $indent = str_repeat("\t", $depth);
-    $output .= "\n$indent<ul class=\"dropdown-content\" id=\"\">\n<li>aaa</li>";
+    $output .= "\n$indent<ul class=\"dropdown-content\" id=\"\">\n";
   }
 }

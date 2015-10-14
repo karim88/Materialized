@@ -6,6 +6,7 @@
     $('#menu-main .dropdown-content:eq('+i+')').attr('id', 'dropdown'+i);
     $('#menu-main .menu-item-has-children:eq('+i+')').attr('data-activates', 'dropdown'+i);
     $('#menu-main .menu-item-has-children:eq('+i+')').attr('data-beloworigin', 'true');
+    $('#menu-main .menu-item-has-children:eq('+i+')').attr('data-hover', 'true');
   }
 /*
   $('img').addClass('materialboxed');
