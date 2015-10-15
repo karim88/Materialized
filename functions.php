@@ -112,6 +112,26 @@ function materialized_widgets_init()
 
 }
 
+//WEBSITE Logo options
+function Materialized_customize_logo($wp_customize)
+{
+  $wp_customize->add_setting('m_logo_setting', array(
+    'default' =>  get_template_directory_uri().'/img/logo.png',
+    'transport' => 'refresh',
+  ));
+
+  $wp_customize->add_section('m_logo_section', array(
+    'title' => __('Head Image', 'materialized'),
+    'priority' => 30,
+  ));
+
+  $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'm_logo_control', array(
+    'label' => __('Image: ', 'materialized'),
+    'settings' => 'm_logo_setting',
+    'section' => 'm_logo_section',
+  )));
+}
+
 //Filters
 add_filter( 'embed_defaults', 'modify_embed_defaults' );
 add_filter( 'excerpt_more', 'new_excerpt_more' );
@@ -120,6 +140,7 @@ add_filter( 'excerpt_length', 'new_excerpt_length' );
 add_action( 'after_setup_theme','Materialized_setup');
 add_action('wp_enqueue_scripts', 'wp_resources');
 add_action('widgets_init', 'materialized_widgets_init');
+add_action('customize_register', 'Materialized_customize_logo');
 
 class My_Walker_Nav_Menu extends Walker_Nav_Menu {
   function start_lvl(&$output, $depth) {

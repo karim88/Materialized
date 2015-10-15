@@ -49,7 +49,7 @@
       <div class="row">
         <div class="col m9 s12">
           <a href="<?php echo home_url(); ?>">
-          <img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="Logo" />
+          <img src="<?php echo get_theme_mod('m_logo_setting'); ?>" alt="Head image" class="head_image" />
           </a>
         </div>
         <div class="col m3 s12">
