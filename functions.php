@@ -132,6 +132,23 @@ function Materialized_customize_logo($wp_customize)
   )));
 }
 
+// OpenGraph image
+function insert_image_in_head() {
+  /*
+  global $post;
+  if(!has_post_thumbnail( $post->ID )) {
+    $default_image = bloginfo('template_directory') . '/img/default-image.png';
+    echo '<meta property="og:image" content="';
+    echo $default_image;
+    echo '"/>';
+  }
+  else{
+    $thumbnail_src = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' );
+    echo '<meta property="og:image" content="';
+    echo esc_attr( $thumbnail_src[0] );
+    echo '"/>';
+  }*/
+}
 //Filters
 add_filter( 'embed_defaults', 'modify_embed_defaults' );
 add_filter( 'excerpt_more', 'new_excerpt_more' );
@@ -141,6 +158,8 @@ add_action( 'after_setup_theme','Materialized_setup');
 add_action('wp_enqueue_scripts', 'wp_resources');
 add_action('widgets_init', 'materialized_widgets_init');
 add_action('customize_register', 'Materialized_customize_logo');
+add_action( 'wp_head', 'insert_image_in_head', 5 );
+load_theme_textdomain('materialized', false, basename(dirname(__FILE__)) . '/languages');
 
 class My_Walker_Nav_Menu extends Walker_Nav_Menu {
   function start_lvl(&$output, $depth) {

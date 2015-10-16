@@ -4,7 +4,6 @@
     <meta charset="<?php bloginfo('charset'); ?>">
     <title><?php bloginfo('name'); ?></title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="shortcut icon" href="favicon.ico">
 
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
@@ -12,13 +11,13 @@
     <meta property="og:title" content="<?php bloginfo('name'); ?>"/>
     <meta property="og:site_name" content="<?php bloginfo('name'); ?>"/>
     <meta property="og:description" content="<?php bloginfo('description'); ?>"/>
-    <meta property="og:image" content="http://gabrielecirulli.github.io/2048/meta/og_image.png"/>
 
   	<meta name="name" content="<?php bloginfo('name'); ?>">
   	<meta name="description" content="<?php bloginfo('description'); ?>">
-  	<meta name="keywords" content="5x5game, game, puzzle, karim oulad chalha, herr.linux88, firefox os, 2048 like">
-  	<meta name="robots" content="index, follow">
-  	<meta name="copyright" content="Karim Oulad Chalha 2014-2015">
+  	<meta name="keywords" content="<?= get_option('keywords'); ?>">
+    <link rel=”author” name="author" href="<?= get_option('author'); ?>">
+  	<meta name="robots" content="<?= get_option('robots'); ?>">
+  	<meta name="copyright" content="<?= get_option('copyright'); ?>">
     <?php wp_head(); ?>
   </head>
   <body <?php body_class(); ?>>
