@@ -55,6 +55,7 @@ function Materialized_setup()
 
   //Post format support
   add_theme_support('post-formats', ['aside', 'gallery', 'link', 'image', 'quote', 'video', 'status', 'audio']);
+  load_theme_textdomain('materialized', basename(dirname(__FILE__)) . '/languages');
 }
 
 /**
@@ -159,7 +160,7 @@ add_action('wp_enqueue_scripts', 'wp_resources');
 add_action('widgets_init', 'materialized_widgets_init');
 add_action('customize_register', 'Materialized_customize_logo');
 add_action( 'wp_head', 'insert_image_in_head', 5 );
-load_theme_textdomain('materialized', false, basename(dirname(__FILE__)) . '/languages');
+
 
 class My_Walker_Nav_Menu extends Walker_Nav_Menu {
   function start_lvl(&$output, $depth) {

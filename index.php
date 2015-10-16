@@ -13,9 +13,13 @@
     <?php
     }
     else{
+      ?>
+      <div class="card-panel not-found">
+      <?php
        _e("Content not found!", 'matarialized');
     }
     ?>
+  </div>
   </div>
   <div class="col m3 s12 widgets">
 
