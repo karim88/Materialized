@@ -80,6 +80,8 @@
 }
 .head_image {
   max-height: 150px;
+  min-height: 150px;
+  max-width: 100%;
   min-width: 100%;
 }
 .nav-posts {
@@ -331,6 +333,12 @@ textarea:focus {
 }
 /* Media Query for devices */
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .head_image {
+    max-height: 100px;
+    min-height: 50px;
+    max-width: 100%;
+    min-width: 100%;
+  }
   .video-post iframe {
     width: 240px;
   }

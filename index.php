@@ -20,9 +20,7 @@
     }
     ?>
   </div>
-  </div>
   <div class="col m3 s12 widgets">
-
     <?php dynamic_sidebar('sidebar-1'); ?>
   </div>
   <div class="col m12 s12">

@@ -13,7 +13,10 @@
   max-height: @max;
   min-height: @min;
 }
-
+.inter-width(@max, @min){
+  max-width: @max;
+  min-width: @min;
+}
 .zoom-animation(@prop, @delay, @speed, @dem){
   -webkit-transition: @prop @delay @speed; /* Safari and Chrome */
   -moz-transition: @prop @delay @speed; /* Firefox */
@@ -124,8 +127,8 @@ body{
 }
 
 .head_image{
-  max-height: 150px;
-  min-width: 100%;
+  .inter-height(150px, 150px);
+  .inter-width(100%, 100%);
 }
 
 .nav-posts{
@@ -369,6 +372,10 @@ input, textarea{
 @media only screen
 and (min-device-width : 320px)
 and (max-device-width : 480px) {
+  .head_image{
+    .inter-height(100px, 50px);
+    .inter-width(100%, 100%);
+  }
   .video-post{
     iframe{
       width: 240px;
