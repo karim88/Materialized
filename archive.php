@@ -44,8 +44,9 @@
 
     <?php
        _e("Content not found!", 'matarialized');
-  } ?>
+    ?>
     </div>
+  <?php } ?>
   </div>
   <div class="col m3 s12 widgets">
 
