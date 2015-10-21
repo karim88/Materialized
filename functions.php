@@ -1,5 +1,6 @@
 <?php
 
+require_once dirname( __FILE__ ) . '/class-tgm-plugin-activation.php';
 require 'mpanel.php';
 
 /**
@@ -55,7 +56,7 @@ function Materialized_setup()
 
   //Post format support
   add_theme_support('post-formats', ['aside', 'gallery', 'link', 'image', 'quote', 'video', 'status', 'audio']);
-  load_theme_textdomain('materialized', basename(dirname(__FILE__)) . '/languages');
+  load_theme_textdomain('materialized', get_template_directory() . '/languages');
 }
 
 /**
@@ -133,6 +134,32 @@ function Materialized_customize_logo($wp_customize)
   )));
 }
 
+/**
+* Plugin recommanded or required in Materialized theme
+*/
+function materialized_required_plugins(){
+  $plugins = array(
+    array(
+      'name' => 'Responsive Lightbox',
+      'slug' => 'responsive-lightbox',
+      'required' => true,
+    ),
+  );
+  $config = array(
+    'id' => 'tgmpa',
+    'default_path' => '',
+ 		'menu'         => 'tgmpa-install-plugins',
+ 		'parent_slug'  => '',
+ 		'capability'   => 'edit_theme_options',
+ 		'has_notices'  => true,
+ 		'dismissable'  => true,
+ 		'dismiss_msg'  => '',
+ 		'is_automatic' => false,
+ 		'message'      => '',
+  );
+  tgmpa( $plugins, $config );
+}
+
 //Filters
 add_filter( 'embed_defaults', 'modify_embed_defaults' );
 add_filter( 'excerpt_more', 'new_excerpt_more' );
@@ -142,7 +169,7 @@ add_action( 'after_setup_theme','Materialized_setup');
 add_action('wp_enqueue_scripts', 'wp_resources');
 add_action('widgets_init', 'materialized_widgets_init');
 add_action('customize_register', 'Materialized_customize_logo');
-
+add_action('tgmpa_register', 'materialized_required_plugins');
 
 class My_Walker_Nav_Menu extends Walker_Nav_Menu {
   function start_lvl(&$output, $depth) {
