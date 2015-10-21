@@ -55,7 +55,7 @@ function Materialized_setup()
   add_image_size( 'banner-thumbnails', 1000, 400, false );
 
   //Post format support
-  add_theme_support('post-formats', arry('aside', 'gallery', 'link', 'image', 'quote', 'video', 'status', 'audio'));
+  add_theme_support('post-formats', array('aside', 'gallery', 'link', 'image', 'quote', 'video', 'status', 'audio'));
   load_theme_textdomain('materialized', get_template_directory() . '/languages');
 }
 
