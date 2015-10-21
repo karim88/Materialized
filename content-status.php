@@ -10,7 +10,7 @@
     <div class="white-text row status">
       <div class="col m3 s3">
         <?php
-          echo get_avatar(get_the_author_meta( 'ID' ), 64, $default, get_the_author . ' avatar', ['class' => 'status-img']);
+          echo get_avatar(get_the_author_meta( 'ID' ), 64, $default, get_the_author . ' avatar', array('class' => 'status-img'));
         ?>
       </div>
       <div class="col s8 m8">

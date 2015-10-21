@@ -17,7 +17,7 @@
               <div class="chip">
                 <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>">
                 <?php
-                  echo get_avatar(get_the_author_meta( 'ID' ), 24, $default, get_the_author . ' avatar', ['class' => 'avatar']);
+                  echo get_avatar(get_the_author_meta( 'ID' ), 24, $default, get_the_author . ' avatar', array('class' => 'avatar'));
                   echo get_the_author( );
                 ?>
               </a>
