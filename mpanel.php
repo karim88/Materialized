@@ -3,7 +3,7 @@ add_action('admin_menu', 'mpanel');
 
 function mpanel($value='')
 {
-  add_menu_page('SEO', 'SEO', 'activate_plugins', 'slug_panel', 'display_page', '', 89);
+  add_theme_page('SEO', 'SEO', 'activate_plugins', 'slug_panel', 'display_page', '', 89);
 }
 function display_page($value='')
 {
@@ -38,14 +38,14 @@ function display_page($value='')
             <tr><th colspan="2">SEO</th></tr>
           </thead>
           <tbody>
-            <tr><td>Author</td><td><input type="text" id="author" name="options[author]"  value="<?= get_option('author', ''); ?>"></td></tr>
-            <tr><td>Copyright</td><td><input type="text" id="copyright" name="options[copyright]"  value="<?= get_option('copyright', ''); ?>"></td></tr>
-            <tr><td>Keywords</td><td><input type="text" id="keywords" name="options[keywords]" value="<?= get_option('keywords', ''); ?>"></td></tr>
-            <tr><td>Robots</td><td><input type="text" id="robots" name="options[robots]" placeholder="index, follow"  value="<?= get_option('robots', ''); ?>"></td></tr>
+            <tr><td>Author</td><td><input type="text" id="author" name="options[author]"  value="<?php echo get_option('author', ''); ?>"></td></tr>
+            <tr><td>Copyright</td><td><input type="text" id="copyright" name="options[copyright]"  value="<?php echo get_option('copyright', ''); ?>"></td></tr>
+            <tr><td>Keywords</td><td><input type="text" id="keywords" name="options[keywords]" value="<?php echo get_option('keywords', ''); ?>"></td></tr>
+            <tr><td>Robots</td><td><input type="text" id="robots" name="options[robots]" placeholder="index, follow"  value="<?php echo get_option('robots', ''); ?>"></td></tr>
           </tbody>
         </table>
       </div>
-      <input type="hidden" name="m_noncename" value="<?= wp_create_nonce('mpanel'); ?>">
+      <input type="hidden" name="m_noncename" value="<?php echo wp_create_nonce('mpanel'); ?>">
       <p class="submit">
         <input type="submit" class="button-primary autowith" name="panel_update" value="<?php _e('Save', 'materialized') ?>">
       </p>

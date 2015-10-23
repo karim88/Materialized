@@ -16,14 +16,14 @@
       ?>
       <div class="card-panel not-found">
       <?php
-       _e("Content not found!", 'matarialized');
+       _e("Content not found!", 'materialized');
 ?>
 </div>
     <?php
   }
     ?>
   </div>
-  <div class="col m3 s12 widgets">
+  <div class="hide-on-small-only col m3 s12 widgets">
     <?php dynamic_sidebar('sidebar-1'); ?>
   </div>
   <div class="col m12 s12">

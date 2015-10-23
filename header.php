@@ -2,7 +2,7 @@
 <html <?php language_attributes(); ?>>
   <head>
     <meta charset="<?php bloginfo('charset'); ?>">
-    <title><?php bloginfo('name'); ?></title>
+    <title><?php wp_title(); ?></title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <meta name="HandheldFriendly" content="True">
@@ -14,10 +14,10 @@
 
   	<meta name="name" content="<?php bloginfo('name'); ?>">
   	<meta name="description" content="<?php bloginfo('description'); ?>">
-  	<meta name="keywords" content="<?= get_option('keywords'); ?>">
-    <link rel=”author” name="author" href="<?= get_option('author'); ?>">
-  	<meta name="robots" content="<?= get_option('robots'); ?>">
-  	<meta name="copyright" content="<?= get_option('copyright'); ?>">
+  	<meta name="keywords" content="<?php echo get_option('keywords'); ?>">
+    <link rel="author" name="author" href="<?php echo get_option('author'); ?>">
+  	<meta name="robots" content="<?php echo get_option('robots'); ?>">
+  	<meta name="copyright" content="<?php echo get_option('copyright'); ?>">
     <?php wp_head(); ?>
   </head>
   <body <?php body_class(); ?>>

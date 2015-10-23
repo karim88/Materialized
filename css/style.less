@@ -36,13 +36,50 @@
 body{
 }
 
+.wp-caption{}
+.sticky{}
+.screen-reader-text{}
+.gallery-caption{}
+.bypostauthor{}
+
+.wp-caption-text{
+  transition: text-shadow 1s;
+  &:hover{
+    text-shadow: 0 0 3px @white;
+  }
+}
+
+
+.aligncenter {
+    display: block;
+    margin: 5px auto 5px auto;
+}
+
+.alignright {
+    float:right;
+    margin: 5px 0 20px 20px;
+}
+
+.alignleft {
+    float: left;
+    margin: 5px 20px 20px 0;
+}
+
+
 .article{
+  box-shadow: 0 0 4px 4px @light-gray;
   margin: 30px 10px 0 0;
   background-color: @light-gray;
   border-radius: 3px;
   .the_content{
     padding: 20px;
     margin: 20px;
+    .chip{
+      background-color: @blue;
+      a{
+        color: @white;
+      }
+    }
   }
   .post-content{
       padding: 0;
@@ -86,10 +123,12 @@ body{
 }
 
 .comments1{
+  box-shadow: 0 0 4px 4px @light-gray;
   margin: 30px 10px 0 0;
   background-color: @light-gray;
   border-radius: 3px;
   #commentform{
+    margin: 0 15px 15px 15px;
     p{
       color: @gray;
       a{

@@ -7,7 +7,7 @@
         the_post_thumbnail('small-thumbnails');
       }
       else{ ?>
-        <img src="<?php bloginfo('template_directory'); ?>/img/default-image.png" alt="<?php the_title(); ?>" width="100%" height="400px"/>
+        <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/default-image.png" alt="<?php the_title(); ?>" width="100%" height="400px"/>
       <?php } ?>
 
       <span class="card-title blue"> <?php the_title(); ?></span>
@@ -16,7 +16,7 @@
     <div class="card-content">
       <span class="info">
       <i class="material-icons tiny"></i>
-      <?php the_time('j F, Y'); _e(' at ', 'materialized'); the_time('G:i'); ?> | <?php _e('By', 'materialized') ?>: <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php the_author(); ?></a> | <?php _e("Posted in", materialized) ?>:
+      <?php the_time('j F, Y'); _e(' at ', 'materialized'); the_time('G:i'); ?> | <?php _e('By', 'materialized') ?>: <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php the_author(); ?></a> | <?php _e("Posted in", 'materialized') ?>:
       <?php
         $categories = get_the_category();
         $separate = ', ';

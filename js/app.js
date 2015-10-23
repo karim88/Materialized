@@ -15,7 +15,7 @@
   $('textarea').addClass('materialize-textarea');
   $('input[type="submit"]').addClass('btn waves-effect blue');
   $('textarea#comment').attr('placeholder', 'Your comment here...');
-  $('.page-numbers, .comment-reply-link, #menu-main .menu-item').addClass('waves-effect');
+  $('.page-numbers, .comment-reply-link, #menu-main .menu-item, #menu-main li a').addClass('waves-effect');
   $('.widget_search input#s').addClass('white');
   //initializing Mobile Nav
   $(".button-collapse").sideNav();

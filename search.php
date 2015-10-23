@@ -13,7 +13,7 @@
 <?php
   }
   else{
-     _e("Content not found!", 'matarialized');
+     _e("Content not found!", 'materialized');
   }?>
 
   <div class="col m12 s12">

@@ -1,4 +1,23 @@
+.wp-caption-text {
+  transition: text-shadow 1s;
+}
+.wp-caption-text:hover {
+  text-shadow: 0 0 3px #ffffff;
+}
+.aligncenter {
+  display: block;
+  margin: 5px auto 5px auto;
+}
+.alignright {
+  float: right;
+  margin: 5px 0 20px 20px;
+}
+.alignleft {
+  float: left;
+  margin: 5px 20px 20px 0;
+}
 .article {
+  box-shadow: 0 0 4px 4px #eeeeee;
   margin: 30px 10px 0 0;
   background-color: #eeeeee;
   border-radius: 3px;
@@ -6,6 +25,12 @@
 .article .the_content {
   padding: 20px;
   margin: 20px;
+}
+.article .the_content .chip {
+  background-color: #2196f3;
+}
+.article .the_content .chip a {
+  color: #ffffff;
 }
 .article .post-content {
   padding: 0;
@@ -45,9 +70,13 @@
   box-shadow: 0 0 5px #b1eaf1;
 }
 .comments1 {
+  box-shadow: 0 0 4px 4px #eeeeee;
   margin: 30px 10px 0 0;
   background-color: #eeeeee;
   border-radius: 3px;
+}
+.comments1 #commentform {
+  margin: 0 15px 15px 15px;
 }
 .comments1 #commentform p {
   color: #777777;

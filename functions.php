@@ -44,6 +44,19 @@ function new_excerpt_more() {
 */
 function Materialized_setup()
 {
+  //Header image
+  $image = array(
+	'default-image'          => get_template_directory_uri().'/img/logo.png',
+	'random-default'         => false,
+	'flex-height'            => false,
+	'flex-width'             => false,
+	'default-text-color'     => '',
+	'header-text'            => true,
+	'uploads'                => true,
+	'wp-head-callback'       => '',
+	'admin-head-callback'    => '',
+	'admin-preview-callback' => '',
+);
   //Navigation menus
   register_nav_menus(array(
     'primary' => __('Top Main navigation', 'materialized'),
@@ -56,6 +69,9 @@ function Materialized_setup()
 
   //Post format support
   add_theme_support('post-formats', array('aside', 'gallery', 'link', 'image', 'quote', 'video', 'status', 'audio'));
+  add_theme_support('automatic-feed-links');
+  add_theme_support( 'title-tag' );
+  add_theme_support( "custom-header", $image );
   load_theme_textdomain('materialized', get_template_directory() . '/languages');
 }
 
@@ -87,7 +103,7 @@ function materialized_widgets_init()
   register_sidebar(array(
     'name' => __('Sidebar', 'materialized'),
     'id' => 'sidebar-1',
-    'description' => '',
+    'description' => 'This sidebar are displayed in right, and hided in the small devices',
     'before_widget' => '<div id="%1$s" class="widget %2$s">',
     'after_widget' => "</div><hr class='white'>",
     'before_title' => '<h4 class="widgettitle">',
@@ -96,7 +112,7 @@ function materialized_widgets_init()
   register_sidebar(array(
     'name' => __('Footer sidebar', 'materialized'),
     'id' => 'sidebar-2',
-    'description' => __('This sidebar are displayed in the footer, and hided in small devices', 'materialized'),
+    'description' => __('This sidebar are displayed in the footer', 'materialized'),
     'before_widget' => '<div id="%1$s" class="widget %2$s">',
     'after_widget' => '</div><hr class="white">',
     'before_title' => '<h4 class="widgettitle">',
@@ -119,6 +135,7 @@ function Materialized_customize_logo($wp_customize)
 {
   $wp_customize->add_setting('m_logo_setting', array(
     'default' =>  get_template_directory_uri().'/img/logo.png',
+    'sanitize_callback' => 'esc_url_raw',
     'transport' => 'refresh',
   ));
 
