@@ -18,6 +18,7 @@
     <?php bloginfo('copyright'); ?> &copy; <?php echo date('Y'); ?>
       </div>
     </div>
+    <?php wp_link_pages(); ?>
   </footer>
   <!-- Scripts -->
   <?php wp_footer(); ?>

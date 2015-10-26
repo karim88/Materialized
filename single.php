@@ -3,7 +3,7 @@
     <?php
     if(have_posts()){
       while (have_posts()) : the_post();?>
-      <div class="center nav-posts">
+      <div class="center nav-posts" <?php post_class(); ?>>
           <?php $dir = (is_rtl())? 'right' : 'left'; ?>
           <?php $dir1 = (!is_rtl())? 'right' : 'left'; ?>
           <?php previous_post_link('<p class="waves-effect '.$dir.'">%link</p>', __( 'Previous: ', 'materialized' ) . '%title', TRUE); ?>
@@ -17,8 +17,8 @@
               <div class="chip">
                 <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>">
                 <?php
-                  echo get_avatar(get_the_author_meta( 'ID' ), 24, $default, get_the_author . ' avatar', array('class' => 'avatar'));
-                  echo get_the_author( );
+                  echo get_avatar(get_the_author_meta( 'ID' ), 24, '', get_the_author() . ' avatar', array('class' => 'avatar'));
+                  echo get_the_author( )
                 ?>
               </a>
               </div>
@@ -54,7 +54,7 @@
                 <p>
                   <?php _e('Share this: ', 'materialized'); ?><br>
                   <a target="_blank" href="https://plus.google.com/share?url=<?php the_permalink(); ?>" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" title="Share this!">
-                    <img class="social-icon" src="<?php becho esc_url( get_template_directory_uri() ); ?>/img/social/google-plus.png" alt="Plus this!" width="32" height="32" />
+                    <img class="social-icon" src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/social/google-plus.png" alt="Plus this!" width="32" height="32" />
                   </a>
                   <a target="_blank" href="http://www.facebook.com/sharer.php?u=<?php the_permalink();?>&amp;t=<?php the_title(); ?>" title="Share on Facebook.">
                     <img class="social-icon" src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/social/facebook.png" alt="Share this!" width="32" height="32" />

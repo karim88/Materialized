@@ -1,3 +1,25 @@
+.sticky {
+  background: #777777;
+  border: 3px solid #eeeeee;
+  padding: 15px;
+  color: #000000;
+}
+.screen-reader-text {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+.gallery-caption {
+  background-color: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  color: #ffffff;
+  z-index: 100;
+}
+.bypostauthor {
+  color: #2196f3;
+}
 .wp-caption-text {
   transition: text-shadow 1s;
 }
@@ -84,7 +106,8 @@
 .comments1 #commentform p a {
   color: #2196f3;
 }
-.comments1 h3 {
+.comments1 .comments-title,
+.comments1 .comment-reply-title {
   color: #ffffff;
   background-color: #2196f3;
   padding: 20px 10px 5px 10px;
@@ -95,7 +118,7 @@
   border-radius: 3px;
   padding: 3px;
 }
-.comments1 ol li {
+.comments1 .comment-list li {
   list-style: none;
 }
 .comments1 #comment::-moz-placeholder {

@@ -1,7 +1,8 @@
 <?php
 
-require_once dirname( __FILE__ ) . '/class-tgm-plugin-activation.php';
-require 'mpanel.php';
+require_once dirname( __FILE__ ) . '/inc/class-tgm-plugin-activation.php';
+require get_template_directory() . '/inc/mpanel.php';
+require get_template_directory() . '/inc/template-tags.php';
 
 /**
 * Function for loading stylesheet & scripts
@@ -18,6 +19,10 @@ function wp_resources()
   wp_enqueue_script('materializejs', get_template_directory_uri() . '/js/materialize.min.js', array(), '20150903', true);
   wp_enqueue_script('masonry', get_template_directory_uri() . '/js/masonry.js', array(), '20150928', true);
   wp_enqueue_script('app', get_template_directory_uri() . '/js/app.js', array(), '20150903', true);
+  if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+    wp_enqueue_script( 'comment-reply' );
+  }
+
 }
 
 /**
@@ -189,7 +194,7 @@ add_action('customize_register', 'Materialized_customize_logo');
 add_action('tgmpa_register', 'materialized_required_plugins');
 
 class My_Walker_Nav_Menu extends Walker_Nav_Menu {
-  function start_lvl(&$output, $depth) {
+  function start_lvl(&$output, $depth = 0, $args = Array()) {
     $indent = str_repeat("\t", $depth);
     $output .= "\n$indent<ul class=\"dropdown-content\" id=\"\">\n";
   }
