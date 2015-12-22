@@ -136,6 +136,12 @@
   max-width: 100%;
   min-width: 100%;
 }
+.nav-links {
+  line-height: 30px;
+}
+.side-nav ul li a {
+  color: #2196f3 !important;
+}
 .nav-posts {
   margin: 28px;
   height: 60px;
@@ -158,7 +164,7 @@ hr,
   color: #ffffff;
 }
 .dropdown-content li a {
-  color: #2196f3;
+  color: #2196f3 !important;
 }
 hr {
   margin: 4px 10px 4px 0 !important;
