@@ -12,7 +12,7 @@
 
         <hr>
         <p>
-          <?php _e('Share this: ', 'materialized'); ?><br>
+          <?php _e('Share this: ', 'kmaterialized'); ?><br>
           <a target="_blank" href="https://plus.google.com/share?url=<?php the_permalink(); ?>" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" title="Share this!">
             <img class="social-icon" src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/social/google-plus.png" alt="Plus this!" width="32" height="32" />
           </a>
@@ -38,7 +38,7 @@
   else{
     ?>
     <div class="card-panel not-found">
-      <?php echo __("OOPS Page not found!", "materialized"); ?>
+      <?php echo __("OOPS Page not found!", "kmaterialized"); ?>
     </div>
   <?php }
 

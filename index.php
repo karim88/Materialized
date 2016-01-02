@@ -16,7 +16,7 @@
       ?>
       <div class="card-panel not-found">
       <?php
-       _e("Content not found!", 'materialized');
+       _e("Content not found!", 'kmaterialized');
 ?>
 </div>
     <?php
