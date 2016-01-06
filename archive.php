@@ -12,17 +12,17 @@
     }
     elseif (is_author()) {
       the_post();
-      printf(__('Archive: %s', 'kmaterialized'), get_the_author());
+      printf(__('Archive: %s', 'materialized'), get_the_author());
       rewind_posts();
     }
     elseif (is_day()) {
-      printf(__('Daily Archives: %s', 'kmaterialized'), get_the_date());
+      printf(__('Daily Archives: %s', 'materialized'), get_the_date());
     }
     elseif (is_month()) {
-      printf(__('Monthly Archives: %s', 'kmaterialized'), get_the_date('F Y'));
+      printf(__('Monthly Archives: %s', 'materialized'), get_the_date('F Y'));
     }
     elseif (is_year()) {
-      printf(__('Yearly Archives: %s', 'kmaterialized'), get_the_date('Y'));
+      printf(__('Yearly Archives: %s', 'materialized'), get_the_date('Y'));
     }
     else {
       # code...
@@ -43,7 +43,7 @@
     <div class="card-panel not-found">
 
     <?php
-       _e("Content not found!", 'kmaterialized');
+       _e("Content not found!", 'materialized');
     ?>
     </div>
   <?php } ?>

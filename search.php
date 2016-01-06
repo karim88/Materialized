@@ -3,7 +3,7 @@
   <?php
   if(have_posts()){
   ?>
-  <h3><span class="white-text blue slug"><?php _e('Search result for: ', 'kmaterialized'); the_search_query(); ?></span></h3>
+  <h3><span class="white-text blue slug"><?php _e('Search result for: ', 'materialized'); the_search_query(); ?></span></h3>
     <div class="row grid">
     <?php
     while (have_posts()) : the_post();
@@ -13,7 +13,7 @@
 <?php
   }
   else{
-     _e("Content not found!", 'kmaterialized');
+     _e("Content not found!", 'materialized');
   }?>
 
   <div class="col m12 s12">

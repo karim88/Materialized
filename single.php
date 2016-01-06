@@ -6,8 +6,8 @@
       <div class="center nav-posts" <?php post_class(); ?>>
           <?php $dir = (is_rtl())? 'right' : 'left'; ?>
           <?php $dir1 = (!is_rtl())? 'right' : 'left'; ?>
-          <?php previous_post_link('<p class="waves-effect '.$dir.'">%link</p>', __( 'Previous: ', 'kmaterialized' ) . '%title', TRUE); ?>
-          <?php next_post_link( '<p class="waves-effect '.$dir1.'">%link</p>', __( 'Next: ', 'kmaterialized' ) . '%title', TRUE ); ?>
+          <?php previous_post_link('<p class="waves-effect '.$dir.'">%link</p>', __( 'Previous: ', 'materialized' ) . '%title', TRUE); ?>
+          <?php next_post_link( '<p class="waves-effect '.$dir1.'">%link</p>', __( 'Next: ', 'materialized' ) . '%title', TRUE ); ?>
       </div>
       <br>
         <div class="article">
@@ -22,7 +22,7 @@
                 ?>
               </a>
               </div>
-              <?php the_time('j F, Y'); _e(' at ', 'kmaterialized'); the_time('G:i'); ?> | <?php _e("Posted in", 'kmaterialized') ?>:
+              <?php the_time('j F, Y'); _e(' at ', 'materialized'); the_time('G:i'); ?> | <?php _e("Posted in", 'materialized') ?>:
               <?php
                 $categories = get_the_category();
                 $separate = ', ';
@@ -45,14 +45,14 @@
                 <p>
                   <?php
                   if(has_tag()){
-                    _e('Tagged with: ', 'kmaterialized');
+                    _e('Tagged with: ', 'materialized');
                     the_tags('<div class="chip waves-effect">', '</div><div class="chip waves-effect">', "</div>");
                   }
                   ?>
                 </p>
                 <!-- Scial Media -->
                 <p>
-                  <?php _e('Share this: ', 'kmaterialized'); ?><br>
+                  <?php _e('Share this: ', 'materialized'); ?><br>
                   <a target="_blank" href="https://plus.google.com/share?url=<?php the_permalink(); ?>" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" title="Share this!">
                     <img class="social-icon" src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/social/google-plus.png" alt="Plus this!" width="32" height="32" />
                   </a>
@@ -77,15 +77,15 @@
         </div>
 
         <div class="center nav-posts">
-            <?php previous_post_link('<p class="waves-effect '.$dir.'">%link</p>', __( 'Previous: ', 'kmaterialized' ) . '%title', TRUE); ?>
-            <?php next_post_link( '<p class="waves-effect '.$dir1.'">%link</p>', __( 'Next: ', 'kmaterialized' ) . '%title', TRUE ); ?>
+            <?php previous_post_link('<p class="waves-effect '.$dir.'">%link</p>', __( 'Previous: ', 'materialized' ) . '%title', TRUE); ?>
+            <?php next_post_link( '<p class="waves-effect '.$dir1.'">%link</p>', __( 'Next: ', 'materialized' ) . '%title', TRUE ); ?>
         </div>
 
         <?php endwhile;
     }
     else{?>
       <div class="container">
-      <?php echo __("Post not found!", "kmaterialized"); ?>
+      <?php echo __("Post not found!", "materialized"); ?>
       </div>
     <?php } ?>
   </div>

@@ -1,4 +1,4 @@
-# Kkmaterialized WP
+# Materialized
 ## This is a simple material design Wordpress template, with thus features:
 * Two-columns
 * Right sidebar

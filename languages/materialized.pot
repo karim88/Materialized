@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Kkmaterialized\n"
+"Project-Id-Version: Materialized\n"
 "POT-Creation-Date: 2015-10-16 17:31+0100\n"
 "PO-Revision-Date: 2015-10-16 17:32+0100\n"
 "Last-Translator: \n"
