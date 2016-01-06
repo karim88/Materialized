@@ -5,7 +5,6 @@ if ( ! function_exists( 'materialized_comment_nav' ) ) :
 /**
  * Display navigation to next/previous comments when applicable.
  *
- * @since Twenty Fifteen 1.0
  */
 function materialized_comment_nav() {
 	// Are there comments to navigate through?

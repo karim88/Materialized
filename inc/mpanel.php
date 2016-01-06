@@ -35,7 +35,7 @@ function display_page($value='')
       <div class="theme-options-group">
         <table class="widefat options-table">
           <thead>
-            <tr><th colspan="2">SEO</th></tr>
+            <tr><th colspan="2">MINI SEO</th></tr>
           </thead>
           <tbody>
             <tr><td>Author</td><td><input type="text" id="author" name="options[author]"  value="<?php echo get_option('author', ''); ?>"></td></tr>
