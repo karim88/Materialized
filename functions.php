@@ -52,9 +52,9 @@ function Materialized_setup()
   //Header image
   $image = array(
 	'default-image'          => get_template_directory_uri().'/img/logo.png',
-	'random-default'         => false,
-	'flex-height'            => false,
-	'flex-width'             => false,
+  'random-default'         => false,
+	'flex-height'            => true,
+	'flex-width'             => true,
 	'default-text-color'     => '',
 	'header-text'            => true,
 	'uploads'                => true,
