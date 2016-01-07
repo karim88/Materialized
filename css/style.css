@@ -139,8 +139,18 @@
 .nav-links {
   line-height: 30px;
 }
-.side-nav ul li a {
+.side-nav li:hover,
+.side-nav li.active {
+  background-color: rgba(0, 0, 0, 0);
+}
+.side-nav li a {
+  text-align: center;
   color: #2196f3 !important;
+}
+.side-nav li a:hover {
+  background-color: #2196f3;
+  color: #ffffff !important;
+  box-shadow: 0 0 5px 5px #ffffff inset;
 }
 .nav-posts {
   margin: 28px;

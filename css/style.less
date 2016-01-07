@@ -7,7 +7,7 @@
 @white: #fff;
 @light-gray: #eee;
 @gray: #777;
-@transtapent: rgba(0, 0, 0, 0);
+@transparent: rgba(0, 0, 0, 0);
 
 .inter-height(@max, @min){
   max-height: @max;
@@ -188,8 +188,20 @@
   line-height: 30px;
 }
 
-.side-nav ul li a{
-  color: @blue !important;
+.side-nav li:hover, .side-nav li.active {
+    background-color: @transparent;
+}
+
+.side-nav li{
+  a{
+    text-align: center;
+    &:hover{
+      background-color: @blue;
+      color: @white !important;
+      box-shadow: 0 0 5px 5px @white inset;
+    }
+    color: @blue !important;
+  }
 }
 
 .nav-posts{
@@ -377,8 +389,8 @@ img{
 nav.pagination{
   font-size: 20px;
   text-align: center;
-  box-shadow: 0 0 0 @transtapent;
-  background-color: @transtapent;
+  box-shadow: 0 0 0 @transparent;
+  background-color: @transparent;
   color: @blue;
   .page-numbers{
     border-radius: 2px;
@@ -403,7 +415,7 @@ nav.pagination{
 
 /* to fix submit apparence */
 input[type='submit']{
-  background-color: @transtapent;
+  background-color: @transparent;
   border: 0 solid;
 }
 

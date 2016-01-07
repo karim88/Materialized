@@ -26,22 +26,19 @@
         <nav>
           <div class="blue nav-wrapper">
             <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-            <ul class="hide-on-med-and-down">
               <?php wp_nav_menu(array(
                 'theme_location' => 'primary',
                 'walker'         => new My_Walker_Nav_Menu(),
-                'items_wrap'     => '<ul id="%1$s" class="%2$s"><li><a href="'.home_url().'"><i class="material-icons">home</i></a></li>%3$s</ul>',
+                'items_wrap'     => '<ul id="%1$s" class="hide-on-med-and-down %2$s"><li><a href="'.home_url().'"><i class="material-icons">home</i></a></li>%3$s</ul>',
               ));
               ?>
-            </ul>
-            <ul class="side-nav" id="mobile-demo">
-              <?php wp_nav_menu(array(
-                'theme_location' => 'primary',
-                'walker'         => new My_Walker_Nav_Menu(),
-                'items_wrap'     => '<ul id="%1$s" class="%2$s"><li><a href="'.home_url().'"><i class="material-icons">home</i></a></li>%3$s</ul>',
+
+              <?php
+                wp_nav_menu(array(
+                'items_wrap'     => '<ul id="mobile-demo" class="side-nav %2$s"><li><a href="'.home_url().'"><i class="material-icons">home</i></a></li>%3$s</ul>',
+                'depth'          => 0
               ));
               ?>
-            </ul>
           </div>
         </nav>
       </div>

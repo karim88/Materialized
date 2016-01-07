@@ -10,7 +10,7 @@ require get_template_directory() . '/inc/template-tags.php';
 */
 function wp_resources()
 {
-  wp_enqueue_style('materialized', get_stylesheet_uri());
+  wp_enqueue_style('materialized-wp', get_stylesheet_uri());
   wp_enqueue_style('materializecss', get_template_directory_uri() . '/css/materialize.min.css', array(), '20150903');
   wp_enqueue_style('materializeicons', 'https://fonts.googleapis.com/icon?family=Material+Icons', array(), '20150929');
   wp_enqueue_style('main', get_template_directory_uri() . '/css/style.css', array(), '20150903');
@@ -39,24 +39,24 @@ function new_excerpt_length()
 * @return string
 */
 function new_excerpt_more() {
-	//return ' <a class="read-more" href="' . get_permalink( get_the_ID() ) . '">' . __( 'Read More', 'materialized' ) . '</a>';
+	//return ' <a class="read-more" href="' . get_permalink( get_the_ID() ) . '">' . __( 'Read More', 'materialized-wp' ) . '</a>';
   return '  ...';
 }
 
 /**
-* Function to Setup materialized
+* Function to Setup materialized-wp
 * @return null
 */
-function Materialized_setup()
+function materialized-wp_setup()
 {
   //Header image
   $image = array(
 	'default-image'          => get_template_directory_uri().'/img/logo.png',
-  'random-default'         => false,
+	'random-default'         => false,
 	'flex-height'            => true,
 	'flex-width'             => true,
 	'default-text-color'     => '',
-	'header-text'            => true,
+	'header-text'            => false,
 	'uploads'                => true,
 	'wp-head-callback'       => '',
 	'admin-head-callback'    => '',
@@ -64,8 +64,8 @@ function Materialized_setup()
 );
   //Navigation menus
   register_nav_menus(array(
-    'primary' => __('Top Main navigation', 'materialized'),
-    'footer' => __('Pages in the footer', 'materialized')
+    'primary' => __('Top Main navigation', 'materialized-wp'),
+    'footer' => __('Pages in the footer', 'materialized-wp')
   ));
   //Featured Images support
   add_theme_support( 'post-thumbnails' );
@@ -77,7 +77,7 @@ function Materialized_setup()
   add_theme_support('automatic-feed-links');
   add_theme_support( 'title-tag' );
   add_theme_support( "custom-header", $image );
-  load_theme_textdomain('materialized', get_template_directory() . '/languages');
+  load_theme_textdomain('materialized-wp', get_template_directory() . '/languages');
 }
 
 /**
@@ -102,11 +102,11 @@ add_action('add_attachment', 'set_first_as_featured');
 add_action('edit_attachment', 'set_first_as_featured');
 
 
-function materialized_widgets_init()
+function materialized-wp_widgets_init()
 {
   //Sidebar 1
   register_sidebar(array(
-    'name' => __('Sidebar', 'materialized'),
+    'name' => __('Sidebar', 'materialized-wp'),
     'id' => 'sidebar-1',
     'description' => 'This sidebar are displayed in right, and hided in the small devices',
     'before_widget' => '<div id="%1$s" class="widget %2$s">',
@@ -115,18 +115,18 @@ function materialized_widgets_init()
     'after_title' => "</h4>"
   ));
   register_sidebar(array(
-    'name' => __('Footer sidebar', 'materialized'),
+    'name' => __('Footer sidebar', 'materialized-wp'),
     'id' => 'sidebar-2',
-    'description' => __('This sidebar are displayed in the footer', 'materialized'),
+    'description' => __('This sidebar are displayed in the footer', 'materialized-wp'),
     'before_widget' => '<div id="%1$s" class="widget %2$s">',
     'after_widget' => '</div><hr class="white">',
     'before_title' => '<h4 class="widgettitle">',
     'after_title' => "</h4>"
   ));
   register_sidebar(array(
-    'name' => __('Slider', 'materialized'),
+    'name' => __('Slider', 'materialized-wp'),
     'id' => 'slider-1',
-    'description' => __('This is a simple sidebar for slider/carousel\'s widgets', 'materialized'),
+    'description' => __('This is a simple sidebar for slider/carousel\'s widgets', 'materialized-wp'),
     'before_widget' => '<div id="%1$s" class="widget %2$s">',
     'after_widget' => '</div>',
     'before_title' => '',
@@ -136,7 +136,7 @@ function materialized_widgets_init()
 }
 
 //WEBSITE Logo options
-function Materialized_customize_logo($wp_customize)
+function materialized-wp_customize_logo($wp_customize)
 {
   $wp_customize->add_setting('m_logo_setting', array(
     'default' =>  get_template_directory_uri().'/img/logo.png',
@@ -145,21 +145,21 @@ function Materialized_customize_logo($wp_customize)
   ));
 
   $wp_customize->add_section('m_logo_section', array(
-    'title' => __('Head Image', 'materialized'),
+    'title' => __('Head Image', 'materialized-wp'),
     'priority' => 30,
   ));
 
   $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'm_logo_control', array(
-    'label' => __('Image: ', 'materialized'),
+    'label' => __('Image: ', 'materialized-wp'),
     'settings' => 'm_logo_setting',
     'section' => 'm_logo_section',
   )));
 }
 
 /**
-* Plugin recommanded or required in Materialized theme
+* Plugin recommanded or required in materialized-wp WP theme
 */
-function materialized_required_plugins(){
+function materialized-wp_required_plugins(){
   $plugins = array(
     array(
       'name' => 'Responsive Lightbox',
@@ -187,11 +187,11 @@ add_filter( 'embed_defaults', 'modify_embed_defaults' );
 add_filter( 'excerpt_more', 'new_excerpt_more' );
 add_filter( 'excerpt_length', 'new_excerpt_length' );
 //Actions
-add_action( 'after_setup_theme','Materialized_setup');
+add_action( 'after_setup_theme','materialized-wp_setup');
 add_action('wp_enqueue_scripts', 'wp_resources');
-add_action('widgets_init', 'materialized_widgets_init');
-add_action('customize_register', 'Materialized_customize_logo');
-add_action('tgmpa_register', 'materialized_required_plugins');
+add_action('widgets_init', 'materialized-wp_widgets_init');
+add_action('customize_register', 'materialized-wp_customize_logo');
+add_action('tgmpa_register', 'materialized-wp_required_plugins');
 
 class My_Walker_Nav_Menu extends Walker_Nav_Menu {
   function start_lvl(&$output, $depth = 0, $args = Array()) {

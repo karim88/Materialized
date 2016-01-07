@@ -9,7 +9,7 @@ function display_page($value='')
 {
   if(isset($_POST['panel_update'])){
     if(!wp_verify_nonce($_POST['m_noncename'], 'mpanel')){
-      die(__('Token not valid!', 'materialized'));
+      die(__('Token not valid!', 'materialized-wp'));
     }
     foreach ($_POST['options'] as $name => $value) {
       if(empty($value)){
@@ -22,7 +22,7 @@ function display_page($value='')
     ?>
     <div id="message" class="updated fade">
       <p>
-        <?php _e('Options successfully saved!', 'materialized'); ?>
+        <?php _e('Options successfully saved!', 'materialized-wp'); ?>
       </p>
     </div>
     <?php
@@ -35,7 +35,7 @@ function display_page($value='')
       <div class="theme-options-group">
         <table class="widefat options-table">
           <thead>
-            <tr><th colspan="2">MINI SEO</th></tr>
+            <tr><th colspan="2">SEO</th></tr>
           </thead>
           <tbody>
             <tr><td>Author</td><td><input type="text" id="author" name="options[author]"  value="<?php echo get_option('author', ''); ?>"></td></tr>
@@ -47,7 +47,7 @@ function display_page($value='')
       </div>
       <input type="hidden" name="m_noncename" value="<?php echo wp_create_nonce('mpanel'); ?>">
       <p class="submit">
-        <input type="submit" class="button-primary autowith" name="panel_update" value="<?php _e('Save', 'materialized') ?>">
+        <input type="submit" class="button-primary autowith" name="panel_update" value="<?php _e('Save', 'materialized-wp') ?>">
       </p>
     </form>
   </div>

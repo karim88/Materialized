@@ -7,13 +7,13 @@ get_header(); ?>
 
 			<section class="error-404 not-found">
 				<header class="page-header">
-					<h1 class="page-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'materialized' ); ?></h1>
+					<h1 class="page-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'materialized-wp' ); ?></h1>
 				</header><!-- .page-header -->
 
 				<div class="page-content">
           <div class="row">
             <div class="col m9 s12">
-              <?php _e( 'It looks like nothing was found at this location. Maybe try a search?', 'materialized' ); ?>
+              <?php _e( 'It looks like nothing was found at this location. Maybe try a search?', 'materialized-wp' ); ?>
             </div>
             <div class="col m3 s12">
               <?php get_search_form(); ?>

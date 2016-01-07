@@ -1,15 +1,17 @@
 (function($) {
-  var has_child = $('#menu-pages .menu-item-has-children');
+  var has_child = $('#menu-pages .menu-item-has-children').not('#mobile-demo .menu-item-has-children');
   var sub_menu  = $('#menu-pages .dropdown-content');
   console.log(has_child);
   has_child.addClass('dropdown-button');
   for (var i=0; i < has_child.length; i++) {
-    console.log(i);
     $('#menu-pages .dropdown-content:eq('+i+')').attr('id', 'dropdown'+i);
-    $('#menu-pages .menu-item-has-children:eq('+i+')').attr('data-activates', 'dropdown'+i);
-    $('#menu-pages .menu-item-has-children:eq('+i+')').attr('data-beloworigin', 'true');
-    $('#menu-pages .menu-item-has-children:eq('+i+')').attr('data-hover', 'true');
+    $('#menu-pages .menu-item-has-children:eq('+i+')').attr({
+      'data-activates': 'dropdown'+i,
+      'data-beloworigin': 'true',
+      'data-hover': 'true'
+    });
   }
+
 
 /*
   $('img').addClass('materialboxed');
