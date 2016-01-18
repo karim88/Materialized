@@ -1,12 +1,12 @@
 <?php
 
 
-if ( ! function_exists( 'materialized-wp_comment_nav' ) ) :
+if ( ! function_exists( 'materialized_wp_comment_nav' ) ) :
 /**
  * Display navigation to next/previous comments when applicable.
  *
  */
-function materialized-wp_comment_nav() {
+function materialized_wp_comment_nav() {
 	// Are there comments to navigate through?
 	if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) :
 	?>

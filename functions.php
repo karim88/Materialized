@@ -1,7 +1,6 @@
 <?php
 
 require_once dirname( __FILE__ ) . '/inc/class-tgm-plugin-activation.php';
-require get_template_directory() . '/inc/mpanel.php';
 require get_template_directory() . '/inc/template-tags.php';
 
 /**
@@ -14,8 +13,6 @@ function wp_resources()
   wp_enqueue_style('materializecss', get_template_directory_uri() . '/css/materialize.min.css', array(), '20150903');
   wp_enqueue_style('materializeicons', 'https://fonts.googleapis.com/icon?family=Material+Icons', array(), '20150929');
   wp_enqueue_style('main', get_template_directory_uri() . '/css/style.css', array(), '20150903');
-  wp_deregister_script('jquery');
-  wp_enqueue_script('jquery', get_template_directory_uri() . '/js/jquery-2.1.4.min.js', array(), '2.1.4', true);
   wp_enqueue_script('materializejs', get_template_directory_uri() . '/js/materialize.min.js', array(), '20150903', true);
   wp_enqueue_script('masonry', get_template_directory_uri() . '/js/masonry.js', array(), '20150928', true);
   wp_enqueue_script('app', get_template_directory_uri() . '/js/app.js', array(), '20150903', true);
@@ -47,7 +44,7 @@ function new_excerpt_more() {
 * Function to Setup materialized-wp
 * @return null
 */
-function materialized-wp_setup()
+function materialized_wp_setup()
 {
   //Header image
   $image = array(
@@ -102,7 +99,7 @@ add_action('add_attachment', 'set_first_as_featured');
 add_action('edit_attachment', 'set_first_as_featured');
 
 
-function materialized-wp_widgets_init()
+function materialized_wp_widgets_init()
 {
   //Sidebar 1
   register_sidebar(array(
@@ -135,36 +132,15 @@ function materialized-wp_widgets_init()
 
 }
 
-//WEBSITE Logo options
-function materialized-wp_customize_logo($wp_customize)
-{
-  $wp_customize->add_setting('m_logo_setting', array(
-    'default' =>  get_template_directory_uri().'/img/logo.png',
-    'sanitize_callback' => 'esc_url_raw',
-    'transport' => 'refresh',
-  ));
-
-  $wp_customize->add_section('m_logo_section', array(
-    'title' => __('Head Image', 'materialized-wp'),
-    'priority' => 30,
-  ));
-
-  $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'm_logo_control', array(
-    'label' => __('Image: ', 'materialized-wp'),
-    'settings' => 'm_logo_setting',
-    'section' => 'm_logo_section',
-  )));
-}
-
 /**
 * Plugin recommanded or required in materialized-wp WP theme
 */
-function materialized-wp_required_plugins(){
+function materialized_wp_required_plugins(){
   $plugins = array(
     array(
       'name' => 'Responsive Lightbox',
       'slug' => 'responsive-lightbox',
-      'required' => true,
+      'required' => false,
     ),
   );
   $config = array(
@@ -187,11 +163,10 @@ add_filter( 'embed_defaults', 'modify_embed_defaults' );
 add_filter( 'excerpt_more', 'new_excerpt_more' );
 add_filter( 'excerpt_length', 'new_excerpt_length' );
 //Actions
-add_action( 'after_setup_theme','materialized-wp_setup');
+add_action( 'after_setup_theme','materialized_wp_setup');
 add_action('wp_enqueue_scripts', 'wp_resources');
-add_action('widgets_init', 'materialized-wp_widgets_init');
-add_action('customize_register', 'materialized-wp_customize_logo');
-add_action('tgmpa_register', 'materialized-wp_required_plugins');
+add_action('widgets_init', 'materialized_wp_widgets_init');
+add_action('tgmpa_register', 'materialized_wp_required_plugins');
 
 class My_Walker_Nav_Menu extends Walker_Nav_Menu {
   function start_lvl(&$output, $depth = 0, $args = Array()) {

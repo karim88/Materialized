@@ -14,7 +14,7 @@ if ( post_password_required() ) {
 			?>
 		</h2>
 
-		<?php materialized-wp_comment_nav(); ?>
+		<?php materialized_wp_comment_nav(); ?>
 
 		<ol class="comment-list">
 			<?php
@@ -26,7 +26,7 @@ if ( post_password_required() ) {
 			?>
 		</ol><!-- .comment-list -->
 
-		<?php materialized-wp_comment_nav(); ?>
+		<?php materialized_wp_comment_nav(); ?>
 
 	<?php endif; // have_comments() ?>
 

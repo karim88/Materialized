@@ -1,0 +1,5 @@
+[1.0.4]
+- fixing some  mid function name error.
+- using the same version of jQuery used in Wordpress.
+- recommanding some plugins instead of requiring them.
+- removing mini-seo page, and costumization page
